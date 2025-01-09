@@ -1,8 +1,8 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {TabParamList} from './types/NavigationTypes';
-import HomeScreen from '../screen/Home/HomeScreen';
 import ProfileScreen from '../screen/Profile/ProfileScreen';
 import MaterialDesignIcon from '@react-native-vector-icons/material-design-icons';
+import StackNavigator from './StackNavigator';
 
 const BottomTab = createBottomTabNavigator<TabParamList>();
 
@@ -30,7 +30,7 @@ const TabNavigator = () => {
         },
         headerShown: false,
       })}>
-      <BottomTab.Screen name="HomeTab" component={HomeScreen} />
+      <BottomTab.Screen name="HomeTab" component={StackNavigator} />
       <BottomTab.Screen name="ProfileTab" component={ProfileScreen} />
     </BottomTab.Navigator>
   );
