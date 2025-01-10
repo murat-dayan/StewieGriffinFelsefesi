@@ -4,8 +4,12 @@ import {AppDispatch, RootState} from '../../redux/store';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchImageUrls} from '../../redux/slices/supabaseSlice';
 import {StyleSheet} from 'react-native';
+import LoadingComp from '../../components/LoadingComp';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
+import {RootStackParamList} from '../../navigation/types/NavigationTypes';
 
 const WallpapersScreen = () => {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const dispatch: AppDispatch = useDispatch();
 
   const {imageUrls, loading, error} = useSelector(
@@ -17,7 +21,7 @@ const WallpapersScreen = () => {
   }, [dispatch]);
 
   if (loading) {
-    return <ActivityIndicator />;
+    return <LoadingComp message="Wallpapers Are Coming..." size="large" />;
   }
 
   if (error) {

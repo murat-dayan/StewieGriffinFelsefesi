@@ -23,19 +23,15 @@ const DrawerNavigator = () => {
     <>
       <Drawer.Navigator
         initialRouteName="HomeDrawer"
-        screenOptions={({navigation}) => ({
-          headerLeft: () => <CustomHeaderLeftIcon navigation={navigation} />,
-          headerStyle: {
-            backgroundColor: AppColors.background,
-          },
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        })}>
+        screenOptions={({navigation, route}) => ({})}>
         <Drawer.Screen
           name="HomeDrawer"
           component={TabNavigator}
-          options={{headerTitle: 'Stewie Griffin Felsefesi'}}
+          options={
+            {
+              //headerTitle: 'Stewie Griffin Felsefesi',
+            }
+          }
         />
       </Drawer.Navigator>
     </>

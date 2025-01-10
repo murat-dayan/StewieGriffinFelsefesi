@@ -30,8 +30,16 @@ const TabNavigator = () => {
         },
         headerShown: false,
       })}>
-      <BottomTab.Screen name="HomeTab" component={StackNavigator} />
-      <BottomTab.Screen name="ProfileTab" component={ProfileScreen} />
+      <BottomTab.Screen
+        name="HomeTab"
+        component={StackNavigator}
+        options={{headerShown: false, tabBarLabel: 'Home'}}
+      />
+      <BottomTab.Screen
+        name="ProfileTab"
+        component={ProfileScreen}
+        options={{headerShown: false, tabBarLabel: 'Profile'}}
+      />
     </BottomTab.Navigator>
   );
 };

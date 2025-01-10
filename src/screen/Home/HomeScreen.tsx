@@ -28,6 +28,23 @@ const HomeScreen = () => {
           textColor={AppColors.background}
         />
       </View>
+
+      <View style={styles.card_container}>
+        <MainCategoryCardComp
+          text="Seasons"
+          iconName="movie-open-outline"
+          onPress={() => navigation.navigate('Seasons')}
+          backgroundColor={AppColors.primary}
+          textColor={AppColors.background}
+        />
+        <MainCategoryCardComp
+          text="Quotes"
+          iconName="format-quote-close-outline"
+          onPress={() => {}}
+          backgroundColor={AppColors.primary}
+          textColor={AppColors.background}
+        />
+      </View>
     </View>
   );
 };
